@@ -1,28 +1,10 @@
-== README
+ACTIVE MODEL SERIALIZERS
+Time per request:       1158.739 [ms] (mean)
+Transfer rate:          1157.68 [Kbytes/sec] received
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:   991 1159 197.4   1100    1652
+Waiting:      990 1158 197.2   1098    1650
+Total:        991 1159 197.4   1100    1652

@@ -8,12 +8,15 @@
 #
 #
 def create_post
-  Post.create(
+  post = Post.create(
     title: Faker::Company.catch_phrase,
     text: Faker::Lorem.paragraphs(3).join('\n'),
     author_name: Faker::Name.name,
     author_email: Faker::Internet.email
   )
+  10.times do
+    post.comments.create(name: Faker::Name.name, body: Faker::Lorem.sentence)
+  end
 end
 
 ActiveRecord::Base.transaction do

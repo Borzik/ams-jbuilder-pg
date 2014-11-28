@@ -27,7 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'faker'
 gem 'factory_girl_rails'
-gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+gem 'active_model_serializers', '~> 0.8.0'
+gem 'postgres_ext-serializers'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

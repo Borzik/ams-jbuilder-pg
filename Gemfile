@@ -30,6 +30,9 @@ gem 'factory_girl_rails'
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'postgres_ext-serializers'
 
+gem 'ruby-prof', group: :test
+gem 'rails-perftest', group: :test
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

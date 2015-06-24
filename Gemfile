@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 gem 'faker'
 gem 'factory_girl_rails'
 
+gem 'ruby-prof', group: :test
+gem 'rails-perftest', group: :test
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

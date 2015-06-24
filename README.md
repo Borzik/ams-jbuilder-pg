@@ -1,12 +1,32 @@
 Speed comparison between main to JSON serializers:
 ====
 
-|               |Time per request by AB|Views rendering|AR calls|
-| ------------- |:--------------------:|:-------------:|:------:|
-| #to_json      | 316.030ms            | 267.5ms       | 3.7ms  |
-| [jBuilder](https://github.com/rails/jbuilder)      | 131.864ms            | 117.8ms       | 4.1ms  |
-| [AMS](https://github.com/rails-api/active_model_serializers)           | 127.770ms            | 102.7ms       | 3.6ms  |
-| [AMS+PGE](https://github.com/dockyard/postgres_ext-serializers)       | 41.498ms             | 21.6ms        | 12.0ms |
+### to_json
+IndexTest#test_posts_index (202 ms warmup)
+           wall_time: 826 ms
+              memory: 0 Bytes
+        process_time: 1.47 sec
+Completed 200 OK in 725ms (Views: 0.5ms | ActiveRecord: 4.1ms)
+
+### JBUILDER:
+IndexTest#test_posts_index (150 ms warmup)
+           wall_time: 480 ms
+              memory: 0 Bytes
+        process_time: 900 ms
+Completed 200 OK in 454ms (Views: 448.3ms | ActiveRecord: 4.2ms)
+
+### AMS
+IndexTest#test_posts_index (180 ms warmup)
+           wall_time: 665 ms
+              memory: 0 Bytes
+        process_time: 870 ms
+
+### AMS+PG
+IndexTest#test_posts_index (61 ms warmup)
+           wall_time: 37 ms
+              memory: 0 Bytes
+        process_time: 32 ms
+Completed 200 OK in 49ms (Views: 19.8ms | ActiveRecord: 27.5ms)
 
 ### Testing info:
-1000 posts, filled with fake data, had to be rendered to JSON with no date-time conversions. #to_json is the slowest probably because it had to serialize dates and times, so it's present there just for info. All other serializers had to render the same template.
+1000 posts, filled with fake data, had to be rendered to JSON with no date-time conversions.
